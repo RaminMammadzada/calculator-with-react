@@ -56,7 +56,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Berabjesus/math-magicians-calculator/issues)
+Feel free to check the [issues page](https://github.com/RaminMammadzada/calculator-with-react/issues)
 
 ### Show your support
 
