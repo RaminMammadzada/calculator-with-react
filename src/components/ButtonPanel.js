@@ -22,9 +22,9 @@ export default class ButtonPanel extends Component {
     const { buttonGroups } = this.state;
     buttonsView = (
       <div>
-        {buttonGroups.map(buttons => (
-          <div className="key-list" key={`${buttons[0]}`}>
-            {buttons.buttons.map(button => (
+        {buttonGroups.map(group => (
+          <div className="key-list" key={`${group.buttons.join('-')}`}>
+            {group.buttons.map(button => (
               <Button
                 key={`btn-${button}`}
                 buttonName={button}

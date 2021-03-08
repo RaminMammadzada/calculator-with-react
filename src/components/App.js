@@ -10,7 +10,7 @@ function calculate(a, b) {
 function App() {
   return (
     <>
-      <Display result={calculate(5, 3)} />
+      <Display result={calculate(5, 3).toString()} />
       <ButtonPanel />
     </>
   );
