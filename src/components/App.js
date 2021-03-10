@@ -2,12 +2,11 @@ import React from 'react';
 import './App.css';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
-
-const calculate = (a, b) => a + b;
+import calculate from '../logic/calculate';
 
 const App = () => (
   <>
-    <Display result={calculate(5, 3).toString()} />
+    <Display result={calculate([0, 0, '+'], '+').total} />
     <ButtonPanel />
   </>
 );
