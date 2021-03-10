@@ -5,20 +5,24 @@ const operate = (numberOne, numberTwo, operation) => {
   const secondvalue = Big(numberTwo);
 
   if (operation === '-') {
-    return firstValue - secondvalue;
+    return firstValue.minus(secondvalue);
   }
 
   if (operation === '+') {
-    return firstValue + secondvalue;
+    return firstValue.plus(secondvalue);
   }
 
   if (operation === 'x') {
-    return firstValue * secondvalue;
+    return firstValue.times(secondvalue);
+  }
+
+  if (operation === '%') {
+    return firstValue.div(100);
   }
 
   if (operation === '/') {
     if (parseInt(secondvalue, 10) === 0) { return "You can't divide a number by zero"; }
-    return firstValue / secondvalue;
+    return firstValue.div(secondvalue);
   }
 
   return null;
