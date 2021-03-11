@@ -30,7 +30,7 @@ It is a basic Calculator project is designed by using class based statefull and 
 Clone the repo with
 
 ```
-  https://github.com/Berabjesus/math-magicians-calculator.git
+  https://github.com/RaminMammadzada/calculator-with-react.git
 ```
 
 Install packages with
