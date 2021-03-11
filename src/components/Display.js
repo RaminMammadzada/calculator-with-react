@@ -16,7 +16,7 @@ class Display extends Component {
 }
 
 Display.defaultProps = {
-  result: 0,
+  result: '0',
 };
 
 Display.propTypes = {

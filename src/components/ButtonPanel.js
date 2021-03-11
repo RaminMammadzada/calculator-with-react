@@ -9,7 +9,7 @@ export default class ButtonPanel extends Component {
       buttonGroups: [
         { buttons: ['AC', '-', '%', '/'] },
         { buttons: ['7', '8', '9', 'X'] },
-        { buttons: ['4', '+5', '6', '-'] },
+        { buttons: ['4', '5', '6', '-'] },
         { buttons: ['1', '2', '3', '+'] },
         { buttons: ['0', '.', '='] },
       ],
