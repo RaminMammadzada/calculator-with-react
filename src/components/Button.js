@@ -13,7 +13,7 @@ export default class Button extends Component {
     return (
       <button
         type="button"
-        onClick={handleClick}
+        onClick={() => handleClick(buttonName)}
         className="button"
       >
         {buttonName}

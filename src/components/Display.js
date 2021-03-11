@@ -8,7 +8,10 @@ class Display extends Component {
   }
 
   render() {
-    const { result } = this.props;
+    let { result } = this.props;
+    if (result === null) {
+      result = 0;
+    }
     return (
       <p>{result}</p>
     );

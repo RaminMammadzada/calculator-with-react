@@ -16,12 +16,8 @@ const operate = (numberOne, numberTwo, operation) => {
     return firstValue.times(secondvalue);
   }
 
-  if (operation === '%') {
-    return firstValue.div(100);
-  }
-
   if (operation === '/') {
-    if (parseInt(secondvalue, 10) === 0) { return "You can't divide a number by zero"; }
+    if (parseInt(secondvalue, 10) === 0) { return "You can't divide a number by zero!"; }
     return firstValue.div(secondvalue);
   }
 
