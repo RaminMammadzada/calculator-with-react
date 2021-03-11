@@ -16,12 +16,13 @@ class App extends Component {
   }
 
   handleClick(buttonName) {
-    // const input = event.target.value;
+    const { total, next, operation } = calculate(this.state, buttonName);
 
-    const { total, next, operation } = this.state;
-    console.log(calculate([total, next, operation], buttonName));
-
-    this.setState(state => calculate(state, buttonName));
+    this.setState({
+      total,
+      next,
+      operation,
+    });
   }
 
   render() {
@@ -29,8 +30,11 @@ class App extends Component {
 
     return (
       <>
-        <Display result={next || total} />
-        <ButtonPanel clickHandler={buttonName => this.handleClick(buttonName)} />
+        <div className="calculator">
+          <h1>Calculator with React</h1>
+          <Display result={next || total} />
+          <ButtonPanel clickHandler={buttonName => this.handleClick(buttonName)} />
+        </div>
       </>
     );
   }

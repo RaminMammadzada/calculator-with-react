@@ -9,12 +9,16 @@ export default class Button extends Component {
 
   render() {
     const { buttonName, handleClick } = this.props;
+    let btnStyle = 'normal-button';
+    if (['/', 'x', '-', '+', '=', '+/-', '%'].includes(buttonName)) {
+      btnStyle = 'operation-button';
+    }
 
     return (
       <button
         type="button"
         onClick={() => handleClick(buttonName)}
-        className="button"
+        className={btnStyle}
       >
         {buttonName}
       </button>

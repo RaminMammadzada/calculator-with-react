@@ -17,7 +17,9 @@ const calculate = (dataObj, buttonName) => {
       total *= -1;
       break;
     case '.':
-      next += '.';
+      if (next !== null) {
+        next += '.';
+      }
       break;
     default:
       break;

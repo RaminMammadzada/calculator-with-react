@@ -13,7 +13,9 @@ class Display extends Component {
       result = 0;
     }
     return (
-      <p>{result}</p>
+      <div className="display">
+        <p>{result}</p>
+      </div>
     );
   }
 }
