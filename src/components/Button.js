@@ -8,14 +8,25 @@ export default class Button extends Component {
   }
 
   render() {
-    const { buttonName } = this.props;
+    const { buttonName, handleClick } = this.props;
 
     return (
-      <p className="button">{buttonName}</p>
+      <button
+        type="button"
+        onClick={handleClick}
+        className="button"
+      >
+        {buttonName}
+      </button>
     );
   }
 }
 
+Button.defaultProps = {
+  handleClick: null,
+};
+
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
+  handleClick: PropTypes.func,
 };
