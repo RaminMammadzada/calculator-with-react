@@ -4,7 +4,7 @@ It is a basic Calculator project is designed by using class based statefull and 
 
 ## Screenshot
 
-<img src="./docs/images/screenshot.png" width="auto" height="auto" />
+<img src="./docs/images/screenshot.png" width="40%" height="auto" />
 
 ## Livedemo
 
