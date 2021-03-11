@@ -1,6 +1,10 @@
 # Math Magicians React Calculator
 
-It is a basic Calculator project is designed by using class based statefull and stateless components.
+It is a basic Calculator project is designed by using class based statefull and functional stateless components.
+
+## Screenshot
+
+<img src="./docs/images/screenshot.png" width="auto" height="auto" />
 
 ## Livedemo
 
