@@ -4,13 +4,9 @@ const calculate = (dataObj, buttonName) => {
   let { total, next, operation } = dataObj;
 
   const numbersArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-  const operationsArr = ['/', 'x', '-', '+'];
+  const operationsArr = ['/', 'x', '-', '+', '='];
 
   switch (buttonName) {
-    case '=':
-      total = String(operate(total, next, operation));
-      next = null;
-      break;
     case 'AC':
       total = null;
       next = null;
