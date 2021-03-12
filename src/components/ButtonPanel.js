@@ -31,7 +31,7 @@ export default class ButtonPanel extends Component {
               <Button
                 key={`btn-${button}`}
                 buttonName={button}
-                handleClick={clickHandler}
+                handleClick={button => clickHandler(button)}
               />
             ))}
           </div>

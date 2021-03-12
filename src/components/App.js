@@ -13,15 +13,15 @@ class App extends Component {
       next: null,
       operation: null,
     };
-  }
 
-  handleClick(buttonName) {
-    const { total, next, operation } = calculate(this.state, buttonName);
-    this.setState({
-      total,
-      next,
-      operation,
-    });
+    this.handleClick = buttonName => {
+      const { total, next, operation } = calculate(this.state, buttonName);
+      this.setState({
+        total,
+        next,
+        operation,
+      });
+    };
   }
 
   render() {
