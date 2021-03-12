@@ -8,14 +8,29 @@ export default class Button extends Component {
   }
 
   render() {
-    const { buttonName } = this.props;
+    const { buttonName, handleClick } = this.props;
+    let btnStyle = 'normal-button';
+    if (['/', 'x', '-', '+', '=', '+/-', '%'].includes(buttonName)) {
+      btnStyle = 'operation-button';
+    }
 
     return (
-      <p className="button">{buttonName}</p>
+      <button
+        type="button"
+        onClick={() => handleClick(buttonName)}
+        className={btnStyle}
+      >
+        {buttonName}
+      </button>
     );
   }
 }
 
+Button.defaultProps = {
+  handleClick: null,
+};
+
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
+  handleClick: PropTypes.func,
 };

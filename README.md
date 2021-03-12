@@ -1,6 +1,10 @@
 # Math Magicians React Calculator
 
-It is a basic Calculator project is designed by using class based statefull and stateless components.
+It is a basic Calculator project is designed by using class based statefull and functional stateless components.
+
+## Screenshot
+
+<img src="./docs/images/screenshot.png" width="40%" height="auto" />
 
 ## Livedemo
 
@@ -26,7 +30,7 @@ It is a basic Calculator project is designed by using class based statefull and 
 Clone the repo with
 
 ```
-  https://github.com/Berabjesus/math-magicians-calculator.git
+  https://github.com/RaminMammadzada/calculator-with-react.git
 ```
 
 Install packages with
