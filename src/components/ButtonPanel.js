@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Button from './Button';
 
 export default class ButtonPanel extends Component {
@@ -7,8 +8,8 @@ export default class ButtonPanel extends Component {
     this.props = props;
     this.state = {
       buttonGroups: [
-        { buttons: ['AC', '-', '%', '/'] },
-        { buttons: ['7', '8', '9', 'X'] },
+        { buttons: ['AC', '+/-', '%', '/'] },
+        { buttons: ['7', '8', '9', 'x'] },
         { buttons: ['4', '5', '6', '-'] },
         { buttons: ['1', '2', '3', '+'] },
         { buttons: ['0', '.', '='] },
@@ -20,6 +21,8 @@ export default class ButtonPanel extends Component {
     let buttonsView = [];
 
     const { buttonGroups } = this.state;
+    const { clickHandler } = this.props;
+
     buttonsView = (
       <div>
         {buttonGroups.map(group => (
@@ -28,6 +31,7 @@ export default class ButtonPanel extends Component {
               <Button
                 key={`btn-${button}`}
                 buttonName={button}
+                handleClick={button => clickHandler(button)}
               />
             ))}
           </div>
@@ -41,3 +45,11 @@ export default class ButtonPanel extends Component {
     );
   }
 }
+
+ButtonPanel.defaultProps = {
+  clickHandler: null,
+};
+
+ButtonPanel.propTypes = {
+  clickHandler: PropTypes.func,
+};

@@ -2,39 +2,60 @@ import operate from './operate';
 
 const calculate = (dataObj, buttonName) => {
   let { total, next, operation } = dataObj;
-  const prevTotal = total;
 
-  if (['+/-', '/', 'x', '*', '+', '-', '%', '='].includes(buttonName)) {
-    switch (buttonName) {
-      case '=':
-        total = operate(total, next, operation);
-        break;
-      case 'AC':
-        total = '0';
-        next = null;
-        operation = null;
-        break;
-      case '+/-':
-        total *= -1;
-        next *= -1;
-        break;
-      case '/': case 'x': case '+': case '-': case '%':
-        operation = buttonName;
-        break;
-      case '.':
-        next = +buttonName;
-        break;
-      default:
-        total = null;
-        break;
+  const numbersArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  const operationsArr = ['/', 'x', '-', '+', '='];
+
+  switch (buttonName) {
+    case 'AC':
+      total = null;
+      next = null;
+      operation = null;
+      break;
+    case '+/-':
+      next *= -1;
+      total *= -1;
+      break;
+    case '.':
+      if (next !== null) {
+        next += '.';
+      }
+      break;
+    default:
+      break;
+    case '%':
+      if (next === null) {
+        next = String(total / 100);
+      } else {
+        next = String(next / 100);
+      }
+      break;
+  }
+
+  if (operationsArr.includes(buttonName)) {
+    if (operation !== null) {
+      total = String(operate(total, next, operation));
+      next = null;
+    } else if (next != null) {
+      total = next;
+      next = null;
     }
-  } else {
-    next = next.toString() + buttonName.toString();
-    next = next.toNumber();
+    if (buttonName !== '=') {
+      operation = buttonName;
+    } else {
+      operation = null;
+    }
+  }
+
+  if (numbersArr.includes(buttonName)) {
+    if (next != null) {
+      next += buttonName;
+    } else {
+      next = buttonName;
+    }
   }
 
   return {
-    prevTotal,
     total,
     next,
     operation,
