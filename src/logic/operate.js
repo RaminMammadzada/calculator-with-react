@@ -3,25 +3,27 @@ import Big from 'big.js';
 const operate = (numberOne, numberTwo, operation) => {
   const firstValue = Big(numberOne);
   const secondvalue = Big(numberTwo);
+  let result = null;
 
   if (operation === '-') {
-    return firstValue.minus(secondvalue).toFixed(3);
+    result = firstValue.minus(secondvalue).toFixed(3);
   }
 
   if (operation === '+') {
-    return firstValue.plus(secondvalue).toFixed(3);
+    result = firstValue.plus(secondvalue).toFixed(3);
   }
 
   if (operation === 'x') {
-    return firstValue.times(secondvalue).toFixed(3);
+    result = firstValue.times(secondvalue).toFixed(3);
   }
 
   if (operation === '/') {
     if (parseInt(secondvalue, 10) === 0) { return "You can't divide a number by zero!"; }
-    return firstValue.div(secondvalue).toFixed(3);
+    result = firstValue.div(secondvalue).toFixed(3);
   }
 
-  return null;
+  result = parseFloat(result);
+  return result;
 };
 
 export default operate;
