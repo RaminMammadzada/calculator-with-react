@@ -21,16 +21,29 @@ const ButtonPanel = props => {
   const { clickHandler } = props;
 
   buttonsView = (
-    <div>
+    <div className="button-panel">
       {buttonGroups.map(group => (
-        <div className="key-list" key={`${group.buttons.join('-')}`}>
-          {group.buttons.map(button => (
-            <Button
-              key={`btn-${button}`}
-              buttonName={button}
-              handleClick={button => clickHandler(button)}
-            />
-          ))}
+        <div className="button-list" key={`${group.buttons.join('-')}`}>
+          {group.buttons.map(button => {
+            let btnStyle = 'normal-button';
+
+            if (['/', 'x', '-', '+', '='].includes(button)) {
+              btnStyle = 'normal-button operation-button';
+            } else if (button === '0') {
+              btnStyle = 'zero-style normal-button';
+            } else {
+              btnStyle = 'normal-button';
+            }
+
+            return (
+              <Button
+                key={`btn-${button}`}
+                buttonName={button}
+                handleClick={button => clickHandler(button)}
+                styling={btnStyle}
+              />
+            );
+          })}
         </div>
       ))}
     </div>

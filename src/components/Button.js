@@ -2,18 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  const { buttonName, handleClick } = props;
-  let btnStyle = 'normal-button';
-
-  if (['/', 'x', '-', '+', '=', '+/-', '%'].includes(buttonName)) {
-    btnStyle = 'operation-button';
-  }
-
+  const { buttonName, handleClick, styling } = props;
   return (
     <button
       type="button"
       onClick={() => handleClick(buttonName)}
-      className={btnStyle}
+      className={styling}
     >
       {buttonName}
     </button>
@@ -27,6 +21,7 @@ Button.defaultProps = {
 Button.propTypes = {
   buttonName: PropTypes.string.isRequired,
   handleClick: PropTypes.func,
+  styling: PropTypes.string.isRequired,
 };
 
 export default Button;
