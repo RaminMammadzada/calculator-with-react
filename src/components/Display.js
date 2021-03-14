@@ -1,24 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class Display extends Component {
-  constructor(props) {
-    super(props);
-    this.props = props;
+const Display = props => {
+  let { result } = props;
+
+  if (result === null) {
+    result = 0;
   }
 
-  render() {
-    let { result } = this.props;
-    if (result === null) {
-      result = 0;
-    }
-    return (
-      <div className="display">
-        <p>{result}</p>
-      </div>
-    );
-  }
-}
+  return (
+    <div className="display">
+      <p>{result}</p>
+    </div>
+  );
+};
 
 Display.defaultProps = {
   result: '0',
