@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  color: #fff;
+  font-size: 40px;
+  padding: 5px;
+  border-bottom: 1px;
+}
+
+.nav-item {
+  flex: 2 2 43%;
+  margin: 0 1%;
+  padding: 0 1%;
+  text-decoration: none;
+  color: rgb(63, 63, 63);
+}
+
+.nav-item:hover {
+  color: rgb(255, 255, 255);
+}

@@ -26,7 +26,7 @@ const App = () => {
   return (
     <>
       <div className="calculator">
-        <h1>Calculator with React</h1>
+        <h2>Calculator with React</h2>
         <Display result={next || total} />
         <ButtonPanel clickHandler={buttonName => handleClick(buttonName)} />
       </div>
