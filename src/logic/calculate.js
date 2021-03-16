@@ -33,7 +33,7 @@ const calculate = (dataObj, buttonName) => {
   }
 
   if (operationsArr.includes(buttonName)) {
-    if (operation !== null) {
+    if (![null, undefined].includes(operation)) {
       total = String(operate(total, next, operation));
       next = null;
     } else if (next != null) {

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Creates a snapshot for Quote Page and it should be the same with the previous snapshot 1`] = `
+<div>
+  <h3>
+    Today's quote: ''Use it, or loose it!''
+  </h3>
+</div>
+`;
